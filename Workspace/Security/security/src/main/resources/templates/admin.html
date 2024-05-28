@@ -1,0 +1,69 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffcc;
+            text-align: center;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #98f459;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffcc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        input[type="button"] {
+            background-color: #98f459;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: #98f459;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>ADMIN Dashboard</h1>
+    </div>
+    <div class="container">
+        <h2>Welcome, [[${user.getFullname()}]]</h2>
+        
+        <span sec:authorize="isAuthenticated">
+
+        <a th:href="@{/logout}">
+            <input type="button" value="Log out">
+        </a>
+        </span>
+    </div>
+</body>
+</html>
